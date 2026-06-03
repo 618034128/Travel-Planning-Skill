@@ -1,4 +1,4 @@
-# Travel Itinerary Planner — an Agent Skill
+# Travel Planning Skill — an Agent Skill
 
 A [Claude Agent Skill](https://docs.claude.com) that turns a loose travel wish into
 a **map route + a time-blocked daily schedule** — and, crucially, **confirms every
@@ -13,7 +13,7 @@ and an hour-by-hour plan. Don't like a stop? Say so and it re-stitches the day.
 ## What's inside
 
 ```
-travel-itinerary-planner/
+travel-planning-skill/
 ├── SKILL.md                          # workflow: Intake → Confirm → Build → Revise
 ├── references/
 │   ├── intake-checklist.md           # what to confirm, defaults, confirmation examples
@@ -46,7 +46,7 @@ travel-itinerary-planner/
 
 ## Install
 
-Drop the `travel-itinerary-planner/` folder into your agent's skills directory, or
+Drop the `travel-planning-skill/` folder into your agent's skills directory, or
 install the packaged `.skill` file in a client that supports skills.
 
 ## License

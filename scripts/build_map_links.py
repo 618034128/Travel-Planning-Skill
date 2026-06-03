@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build shareable route URLs (Google Maps / Amap / Baidu) from an ordered list of stops.
 
-Use this in Phase 2 of the travel-itinerary-planner skill when no interactive
+Use this in Phase 2 of the travel-planning-skill skill when no interactive
 maps/places tool is available in the agent. It emits a directions URL that opens
 the full route, with every stop as a waypoint in visiting order.
 

@@ -1,5 +1,5 @@
 ---
-name: travel-itinerary-planner
+name: travel-planning-skill
 description: >-
   Plan complete travel itineraries with a map route and a time-blocked daily
   schedule. Use this skill whenever the user wants to plan a trip or asks for an
@@ -11,7 +11,7 @@ description: >-
   wastes effort planning the wrong trip.
 ---
 
-# Travel Itinerary Planner
+# Travel Planning Skill
 
 Turn a loose travel wish ("I want to go to X, leave around 9, back by 6, I really
 want to see Y, rest is up to you") into two deliverables:
