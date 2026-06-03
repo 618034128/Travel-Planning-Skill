@@ -1,5 +1,12 @@
 # Travel Planning Skill — an Agent Skill
 
+**English** | [简体中文](README.zh-CN.md)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Claude Agent Skill](https://img.shields.io/badge/Claude-Agent%20Skill-8A2BE2)](https://docs.claude.com)
+[![Validate skill](https://github.com/618034128/Travel-Planning-Skill/actions/workflows/validate.yml/badge.svg)](https://github.com/618034128/Travel-Planning-Skill/actions/workflows/validate.yml)
+[![GitHub stars](https://img.shields.io/github/stars/618034128/Travel-Planning-Skill?style=social)](https://github.com/618034128/Travel-Planning-Skill/stargazers)
+
 A [Claude Agent Skill](https://docs.claude.com) that turns a loose travel wish into
 a **map route + a time-blocked daily schedule** — and, crucially, **confirms every
 trip parameter with you before it plans anything**, so it never wastes effort
@@ -9,6 +16,12 @@ You say: *"I want to spend Saturday in Nanjing with two friends, out around 9 ba
 by evening, we love trendy cafes and dessert, rest is up to you."*
 The agent confirms the gaps (defaulting the rest), then produces an ordered route
 and an hour-by-hour plan. Don't like a stop? Say so and it re-stitches the day.
+
+## See it in action
+
+A real run — a Lianyungang → Nanjing weekend, with a 12306 train recommendation
+and Amap fallback links generated when no maps tool was connected:
+**[examples/nanjing-weekend.md](examples/nanjing-weekend.md)**.
 
 ## What's inside
 
@@ -20,8 +33,10 @@ travel-planning-skill/
 │   ├── maps-and-routing.md           # maps-tool detection + link generation (China vs intl)
 │   ├── scheduling-heuristics.md      # pacing, travel-time, meals, opening hours
 │   └── transport-and-booking.md      # inter-city legs, 12306 MCP use, query-vs-book boundary
-└── scripts/
-    └── build_map_links.py            # builds Google Maps / Amap / Baidu route URLs
+├── scripts/
+│   └── build_map_links.py            # builds Google Maps / Amap / Baidu route URLs
+└── examples/
+    └── nanjing-weekend.md            # a real, worked-through itinerary
 ```
 
 ## Design highlights
@@ -51,4 +66,4 @@ install the packaged `.skill` file in a client that supports skills.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Update the copyright line with your name.
+MIT — see [LICENSE](LICENSE).

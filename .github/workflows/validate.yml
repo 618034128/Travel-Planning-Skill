@@ -1,0 +1,34 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Check SKILL.md frontmatter and referenced files
+        run: |
+          python - <<'PY'
+          import re, pathlib
+          root = pathlib.Path('.')
+          skill = (root / 'SKILL.md').read_text(encoding='utf-8')
+          m = re.search(r'^name:\s*(.+)$', skill, re.M)
+          assert m, 'SKILL.md is missing a name in its frontmatter'
+          print('skill name:', m.group(1).strip())
+          refs = set(re.findall(r'`(references/[^`]+|scripts/[^`]+)`', skill))
+          missing = [r for r in refs if not (root / r).exists()]
+          assert not missing, f'SKILL.md references missing files: {missing}'
+          print(f'OK: all {len(refs)} referenced paths exist')
+          PY
+
+      - name: Smoke-test the map-link builder
+        run: python scripts/build_map_links.py --china --city Test --stops "A,Test" "B,Test"
